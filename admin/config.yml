@@ -1,0 +1,221 @@
+# Decap CMS configuration. Each field here is a box in the /admin dashboard.
+# Changing field names requires matching changes in app.js and content/portfolio.json.
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "website"
+    label: "Website"
+    files:
+      - name: "portfolio"
+        label: "Portfolio (all sections)"
+        file: "content/portfolio.json"
+        fields:
+          - label: "Site settings (browser tab and search)"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Page title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Positioning line", name: "positioning", widget: "string" }
+              - { label: "Introduction", name: "intro", widget: "text" }
+              - { label: "Portrait photo", name: "image", widget: "image", required: false }
+              - { label: "Placeholder label (shown if no photo)", name: "label", widget: "string" }
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - label: "Industries"
+                name: "industries"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Professional expertise"
+            name: "expertise"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Selected work"
+            name: "selectedWork"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Work items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Category", name: "category", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Placeholder label (shown if no image)", name: "label", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "KKC Media experience"
+            name: "kkc"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Designation", name: "designation", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Industry", name: "industry", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "My contribution"
+                name: "contribution"
+                widget: "list"
+                field: { label: "Responsibility", name: "item", widget: "string" }
+              - label: "Clients and projects (images first)"
+                name: "projects"
+                widget: "list"
+                fields:
+                  - { label: "Client name", name: "client", widget: "string" }
+                  - { label: "Specialty", name: "specialty", widget: "string" }
+                  - { label: "Project image", name: "image", widget: "image", required: false }
+                  - { label: "Placeholder label (shown if no image)", name: "label", widget: "string" }
+                  - { label: "Description", name: "text", widget: "text" }
+                  - label: "Links (Drive folders, Canva reports)"
+                    name: "links"
+                    widget: "list"
+                    fields:
+                      - { label: "Link text", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+              - label: "Extra links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "Link text", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+
+          - label: "Gallery Pradarshak experience"
+            name: "pradarshak"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Designation", name: "designation", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Industry", name: "industry", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "My contribution"
+                name: "contribution"
+                widget: "list"
+                field: { label: "Responsibility", name: "item", widget: "string" }
+              - label: "Content pillars"
+                name: "pillars"
+                widget: "list"
+                field: { label: "Pillar", name: "pillar", widget: "string" }
+              - { label: "Instagram URL", name: "instagram", widget: "string" }
+              - label: "Showcase"
+                name: "showcase"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Placeholder label (shown if no image)", name: "label", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Hospitality agency experience"
+            name: "agency"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Designation", name: "designation", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Industry", name: "industry", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "My contribution"
+                name: "contribution"
+                widget: "list"
+                field: { label: "Responsibility", name: "item", widget: "string" }
+              - { label: "Brand portfolio heading", name: "brandsHeading", widget: "string" }
+              - label: "Brands"
+                name: "brands"
+                widget: "list"
+                field: { label: "Brand name", name: "brand", widget: "string" }
+              - label: "Project galleries"
+                name: "galleries"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Placeholder label (shown if no image)", name: "label", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Skills"
+            name: "skills"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Skill groups"
+                name: "groups"
+                widget: "list"
+                fields:
+                  - { label: "Group name", name: "group", widget: "string" }
+                  - label: "Skills"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Skill", name: "skill", widget: "string" }
+              - { label: "Tools heading", name: "toolsHeading", widget: "string" }
+              - label: "Tool groups"
+                name: "tools"
+                widget: "list"
+                fields:
+                  - { label: "Group name", name: "group", widget: "string" }
+                  - label: "Tools"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Tool", name: "tool", widget: "string" }
+
+          - label: "Education"
+            name: "education"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Career interests"
+            name: "career"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Interests"
+                name: "items"
+                widget: "list"
+                field: { label: "Interest", name: "interest", widget: "string" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Work preference", name: "workPreference", widget: "string" }
